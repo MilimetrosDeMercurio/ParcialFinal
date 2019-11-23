@@ -1,0 +1,41 @@
+<% include partials/_header %>
+
+<div class="container">
+    <div class="row">
+            <div class="col-md-5 offset-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/edit/<%= animal._id %>" method="POST">
+                                <div class="form-group">
+                                    <input type="text" name="nombre" value="" placeholder="nombre" class="form-control" 
+                                    value="<% animal.nombre %>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="clasificacion" value="" placeholder="clasificacion"
+                                        class="form-control" value="<% animal.clasificacion %>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="apariencia" value="" placeholder="apariencia" class="form-control"
+                                    value="<% animal.apariencia %>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="poder" value="" placeholder="poder" class="form-control"
+                                    value="<% animal.poder %>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="ubicacion" value="" placeholder="ubicacion" class="form-control"
+                                    value="<% animal.ubicacion %>">
+                                </div>
+                                <button type="submit" name="button" class="btn btn-primary btn-block">Update</button>
+            
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+    </div>
+
+</div>
+
+
+    <% include partials/_footer %>

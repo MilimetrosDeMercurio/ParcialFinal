@@ -1,0 +1,65 @@
+<% include partials/_header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="nombre" value="" placeholder="nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="clasificacion" value="" placeholder="clasificacion"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apariencia" value="" placeholder="apariencia" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="poder" value="" placeholder="poder" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="ubicacion" value="" placeholder="ubicacion" class="form-control">
+                        </div>
+                        <button type="submit" name="button" class="btn btn-primary btn-block">Add</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7"></div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Clasificacion</th>
+                    <th>Apariencia</th>
+                    <th>Poder</th>
+                    <th>Ubicacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i< animals.lengtf; i++){
+                    <tr>
+                        <td><% i + 1 %></td>
+                <td><% animals[i].nombre %></td>
+                <td><% animals[i].clasificacion %></td>
+                <td><% animals[i].apariencia %></td>
+                <td><% animals[i].poder %></td>
+                <td><% animals[i].ubicacion %></td>
+                <td>
+                    <a href="/delete/<% animals[i]._id%>" class="btn btn-danger">Delete</a> 
+                    <a href="/edit/<% animals[i]._id %>" class="btn btn-info">Edit</a>
+                     
+
+                </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<% include partials/_footer %>
